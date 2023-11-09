@@ -1,0 +1,248 @@
+/* Set box-sizing for all elements to include padding and borders in element width */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Define the styles for the body of the web page */
+  body {
+    background-color: #ffffff; /* White background */
+    font-family: Arial, Helvetica, sans-serif; /* Font family for text */
+  }
+  
+  /* Style for the navigation bar */ 
+  nav {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space content evenly in the row */
+    align-items: center; /* Center items vertically */
+    background-color: #1e90ff; /* Blue background color */
+    padding: 15px 15px; /* Padding around the navigation bar */
+    margin-bottom: 6px; /* Margin at the bottom of the navigation bar */
+  }
+  
+  /* Style for the header text within the navigation bar */
+  nav h2 {
+    color: #f4f4f4; /* Text color */
+    margin-right: 6.5rem; /* Right margin */
+  }
+  
+  /* Styles for elements with the class 'lgcontainer' */
+  .lgcontainer {
+    font-weight: 800; /* Set font weight to 800 (bold) */
+    cursor: pointer; /* Set the cursor to a pointer when hovering */
+  } 
+  
+  /* Styles for the search input field */
+  .search {
+    width: 300px; /* Width of the input field */
+    height: 35px; /* Height of the input field */
+    font-size: 18px; /* Font size for text within the input field */
+    padding: 10px; /* Padding inside the input field */
+    border: none; /* Remove border */
+  }
+  
+  /* Styles for navigation links */
+  nav a {
+    color: #fff; /* Text color for links */
+    text-decoration: none; /* Remove underlines from links */
+    margin: 0 1vh; /* Margin for spacing between links */
+  }
+  
+  /* Hide elements with the class 'menucontainer' by default */
+  .menucontainer {
+    display: none;
+  }
+  
+  /* Styles for the footer */
+  footer {
+    text-align: center; /* Center-align text within the footer */
+    padding: 40px 40px; /* Padding for the footer */
+  }
+  
+  /* Styles for movie content containers */
+  .moviecontent {
+    background-color: #fff; /* White background color */
+    margin: 5px; /* Margin around each movie content container */
+    box-shadow: 6px 6px 6px 0 rgba(181, 179, 179, 0.5); /* Box shadow for a subtle shadow effect */
+  }
+  
+  /* Styles for images within elements with the class 'outsidecontainer' */
+  .outsidecontainer img {
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+  }
+  
+  /* Styles for images within elements with the class 'insidecontainer' */
+  .insidecontainer img {
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+    width: 220px; /* Set a specific width for the images */
+    height: 240px; /* Set a specific height for the images */
+  }
+  
+  /* Styles for text and headings within elements with the class 'outsidecontainer' */
+  .outsidecontainer h3 {
+    padding: 10px 12px 6px 12px; /* Padding for the heading */
+    font-family: sans-serif;
+  }
+  
+  .outsidecontainer p {
+    padding: 0px 12px; /* Padding for the paragraph text */
+    line-height: 20px; /* Line height for text */
+    text-align: justify; /* Justify text alignment */
+    font-family: sans-serif;
+  }
+  
+  /* Styles for text and headings within elements with the class 'insidecontainer' */
+  .insidecontainer h3 {
+    padding: 1px 1px; /* Padding for the heading */
+    font-family: sans-serif;
+  }
+  
+  .insidecontainer p {
+    padding: 3px 1px; /* Padding for the paragraph text */
+    line-height: 22px; /* Line height for text */
+    font-family: sans-serif;
+  }
+  
+  /* Styles for buttons */
+  button {
+    display: block; /* Display buttons as blocks */
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* Text color */
+    padding: 0.5rem 1rem; /* Padding around the button text */
+    margin: 10px 1px 2px auto; /* Margin for button positioning */
+    border: none; /* Remove button border */
+    border-radius: 2px; /* Add a slight border radius for rounded corners */
+    font-family: sans-serif;
+  }
+  
+  /* Additional styles for buttons within elements with the class 'outsidecontainer' */
+  .outsidecontainer button {
+    margin: 10px 12px 12px auto; /* Adjusted margin for these buttons */
+    font-family: sans-serif;
+  }
+  
+  /* Styles for buttons within the last child of elements with the class 'insidecontainermoviecontent' */
+  .topcontainer .insidecontainermoviecontent:last-child button {
+    margin: 53px 1px 2px auto; /* Adjusted margin for buttons in this specific case */
+    font-family: sans-serif;
+  }
+  
+  /* Styles for the container holding movie elements */
+  .moviescontainer {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center-align content horizontally */
+    max-width: 80rem; /* Maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  /* Styles for elements with the class 'outsidecontainer' */
+  .outsidecontainer {
+    display: flex; /* Use flexbox layout */
+    flex-basis: 500px; /* Set the initial flex basis */
+    height: fit-content; /* Adjust height to fit content */
+  }
+  
+  /* Styles for elements with the class 'insidecontainer' */
+  .insidecontainer {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange child elements in a column */
+    flex-basis: 410px; /* Set the initial flex basis */
+  }
+  
+  /* Styles for top and bottom containers */
+  .topcontainer,
+  .bottomcontainer {
+    display: flex; /* Use flexbox layout for both top and bottom containers */
+  }
+  
+  /* Styles for elements with the class 'insidecontainermoviecontent' */
+  .insidecontainermoviecontent {
+    flex: 1; /* Allow the element to grow and take available space */
+    padding: 10px 10px; /* Padding around the content within these elements */
+  }
+  
+  /* Media query for screen width between 801px and 1024px */
+  @media (min-width: 801px) and (max-width: 1024px) {
+    /* Adjust the layout for top and bottom containers */
+    .topcontainer, .bottomcontainer {
+      flex-direction: column; /* Arrange containers in a column on smaller screens */
+    }
+  
+    /* Adjust the flex basis for elements within the containers */
+    .insidecontainer {
+      flex-basis: 250px;
+    }
+    .outsidecontainer {
+      flex-basis: 480px;
+    }
+  }
+
+  
+  
+  /* Media query for screen width between 481px and 800px */
+  @media (min-width: 481px) and (max-width: 800px) {
+    /* Adjust the layout for the movie container */
+    .moviescontainer {
+      flex-direction: column; /* Arrange movies in a column on smaller screens */
+      padding: 1rem; /* Add padding to the container */
+    }
+  
+    /* Adjust the image size within elements with the class 'insidecontainer' */
+    .insidecontainer img {
+      width: auto;
+      height: auto;
+    }
+  
+    /* Adjust the flex basis and height for elements with specific classes */
+    .outsidecontainer {
+      flex-basis: 480px;
+      height: auto;
+    }
+  
+    /* Hide specific elements and display the menu container */
+    .navitemcontainer, .srchcontainer {
+      display: none;
+    }
+    .menucontainer {
+      display: block;
+    }
+  
+    /* Adjust the margin for the navigation header */
+    nav h2 {
+      margin-right: 2px;
+    }
+  }
+  
+  /* Media query for screen width less than 480px */
+  @media (max-width: 480px) {
+    /* Adjust the layout for the movie container */
+    .moviescontainer {
+      flex-direction: column; /* Arrange movies in a column on smaller screens */
+    }
+  
+    /* Adjust the layout for top and bottom containers */
+    .topcontainer, .bottomcontainer {
+      flex-direction: column; /* Arrange containers in a column on smaller screens */
+    }
+  
+    /* Adjust the image size within elements with the class 'insidecontainer' */
+    .insidecontainer img {
+      width: auto;
+      height: auto;
+    }
+  
+    /* Hide specific elements and display the menu container */
+    .navitemcontainer, .srchcontainer {
+      display: none;
+    }
+    .menucontainer {
+      display: block;
+    }
+  
+    /* Adjust the margin for the navigation header */
+    nav h2 {
+      margin-right: 2px;
+    }
+  }
+  

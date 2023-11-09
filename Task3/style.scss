@@ -1,0 +1,223 @@
+// Define a list of stripe colors
+$stripe-color: #4e89ae #43658b #ed6663 #ffa372 #8ccff7 #e2eff1;
+
+// Mixin to center elements both horizontally and vertically
+@mixin center-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global CSS reset for all elements
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Styling for the body of the web page
+body {
+  background-color: nth($stripe-color, 6); // Set background color from the stripe colors
+}
+
+// Styling for the header section
+header {
+  background-color: nth($stripe-color, 5); // Set background color from the stripe colors
+}
+
+// Styling for the footer, extending the header styles
+footer {
+  @extend header; // Inherit header styles
+  height: 50px;
+}
+
+// Styles for elements within the header section
+header {
+  .top-container {
+    @include center-element(); // Apply centering mixin
+    height: 43vh;
+  }
+
+  .top-container-box {
+    @include center-element(); // Apply centering mixin
+    height: 43vh;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; // Ensure images fit within the container
+    }
+  }
+}
+
+// Styles for the bottom container
+.bottom-container {
+  @include center-element(); // Apply centering mixin
+  height: 52vh;
+  flex-direction: column; // Arrange items vertically
+
+  .bottom-container-lines {
+    width: 100%;
+    margin-top: 5px;
+
+    // Styles for individual lines within the bottom container
+    .line-one {
+      background-color: nth($stripe-color, 1);
+      width: 100%;
+      height: 5vh;
+
+      // Hover effect for lines
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    .line-two {
+      background-color: nth($stripe-color, 2);
+      width: 100%;
+      height: 5vh;
+
+      // Hover effect for lines
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    .line-three {
+      background-color: nth($stripe-color, 3);
+      width: 100%;
+      height: 5vh;
+
+      // Hover effect for lines
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    .line-four {
+      background-color: nth($stripe-color, 4);
+      width: 100%;
+      height: 5vh;
+
+      // Hover effect for lines
+      &:hover {
+        background-color: #444;
+      }
+    }
+  }
+
+  // Styles for circular elements within the bottom container
+  .bottom-container-circles {
+    @include center-element();
+    margin-top: 40px;
+
+    .circle-one {
+      background-color: nth($stripe-color, 1);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin: 4px;
+
+      // Hover effect for circles
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    .circle-two {
+      background-color: nth($stripe-color, 2);
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      margin: 4px;
+
+      // Hover effect for circles
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    .circle-three {
+      background-color: nth($stripe-color, 3);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin: 4px;
+
+      // Hover effect for circles
+      &:hover {
+        background-color: #444;
+      }
+    }
+
+    .circle-four {
+      background-color: nth($stripe-color, 4);
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      margin: 4px;
+
+      // Hover effect for circles
+      &:hover {
+        background-color: #444;
+      }
+    }
+  }
+}
+
+
+// Mixin for handling media queries
+@mixin media-query($breakpoint) {
+  @media #{$breakpoint} {
+  @content;
+  }
+  }
+
+// Your existing code...
+
+// Media query for screen width between 481px and 800px
+@include media-query("(min-width: 481px) and (max-width: 800px)") {
+  header .top-container {
+    height: 32vh;
+  }
+
+  header .top-container .top-container-box {
+    height: 32vh;
+  }
+
+  img {
+    content: url("https://via.placeholder.com/300"); // Change image content
+  }
+
+  .bottom-container {
+    height: 89vh;
+  }
+
+  .bottom-container .bottom-container-circles {
+    flex-direction: column; // Arrange circles vertically
+  }
+}
+
+// Media query for screen width less than 480px
+@include media-query("(max-width: 480px)") {
+  header .top-container {
+    height: 25vh;
+  }
+
+  header .top-container .top-container-box {
+    height: 25vh;
+  }
+
+  img {
+    content: url("https://via.placeholder.com/200"); // Change image content
+  }
+
+  .bottom-container {
+    height: 89vh;
+  }
+
+  .bottom-container .bottom-container-circles {
+    flex-direction: column; // Arrange circles vertically
+  }
+}

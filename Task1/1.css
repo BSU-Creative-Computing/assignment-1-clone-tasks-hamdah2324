@@ -1,0 +1,84 @@
+/* Apply box-sizing and center elements horizontally */
+*{
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    margin: 0 auto;  /* Center elements horizontally */
+}
+
+/* set body styles and set background color and text color */
+body {
+    margin: 0;  /* Reset margin */
+    padding: 0; /* Reset padding */
+    background-color: #ffffff;  /* Set the background color to white */ 
+    color: #070707;  /* Set the text color to a dark gray (#070707) */
+}
+ /* Style the header with padding and background color */
+header{
+    padding:15px;  /* Add padding to the header */
+    background-color: #ffffff; /* Set the background color of the header to white */
+}
+/* Style the header image with a maximum height */
+header img{
+    height:60px; /* Set the maximum height for the header image to 60px */
+}
+
+/* Create a grid container with three equal columns */
+.grid-container {
+    display: grid; /* Display the container as a grid */
+    grid-template-columns: repeat(3, 1fr); /* Create three equal-width columns using grid layout */
+}
+
+
+
+img {
+    max-width: 100%;  /* Set the maximum width for the main container to 1024px */
+}
+/* Set maximum width for the main container */
+.main-container{ 
+    max-width:1024px;
+}
+/* Style the text container paragraph with margin, padding, background color, and font size */
+.text-container p{
+    margin: 0;  /* Reset the margin of the paragraph */
+    padding: 20px; /* Add padding to the paragraph */
+    background-color: white;  /* Set the background color of the paragraph to white */
+    font-size: 17px;  /* Set the font size of the paragraph to 17px */
+    font-family: "Courier New", monospace; /* Set the font family to a monospace font (typewriter style) */
+}
+/* Style the footer with text alignment, padding, background color, and text color */
+footer {
+    text-align: center; /* Center-align the text within the footer */
+    padding: 6px;  /* Add padding to the footer */
+    background-color: #333; /* Set the background color of the footer to a dark gray (#333) */
+    color: white; /* Set the text color of the footer to white */
+}
+
+/* Media query for screen width less than 480px, single column layout */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* Change to a single column layout */
+    
+    }
+}
+/* Media query for screen width between 481px and 800px, two column layout */
+@media (min-width: 481px) and (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);/* Change to a two column layout */
+    }
+}
+
+
+/* Media query for screen width between 801px and 1024px, three column layout */
+
+@media (min-width: 801px) and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Keep a three column layout */
+    }
+}
+
+/* Media query for screen width above 1025px, three column layout */
+@media (min-width: 1025px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Keep a three column layout */
+     
+    }
+}
